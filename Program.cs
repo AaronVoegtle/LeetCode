@@ -26,6 +26,7 @@ namespace MorePractice
 
         public static void palindromeNumber(int x)
         {
+
             string tempString = " ";
             bool stringFlag = false;
             tempString = x.ToString();
