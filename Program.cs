@@ -10,7 +10,7 @@ namespace MorePractice
     {
         static void Main(string[] args)
         {
-            string[] wordString = new string[3] {"apple","ape","aphor"};
+            string[] wordString = new string[3] { "apple", "ape", "aphor" };
 
 
             //palindromeNumber(2345432);
@@ -18,8 +18,10 @@ namespace MorePractice
             //palindromeNumber(3139999);
             //palindromeNumber(1000021);
             //Console.WriteLine( RomanToInt("MMCMIVII"));
-            Console.WriteLine(LongestCommonPrefix(wordString));
+            //TODO work on this one Console.WriteLine(LongestCommonPrefix(wordString));
+            Console.WriteLine(IsValid("()"));
             Console.WriteLine("Press enter to exit");
+
             Console.ReadLine();
         }
 
@@ -52,74 +54,74 @@ namespace MorePractice
             int returnNumber = 0;
             char[] s;
             s = arr.ToCharArray();
-            
-            for(int i = 0; i < s.Length; i++)
+
+            for (int i = 0; i < s.Length; i++)
             {
-               
-                    if (s[i] == 'M')
-                    {
-                        returnNumber = returnNumber + 1000;
-                    }
-                    else if (s[i] == 'D')
-                    {
-                        returnNumber = returnNumber + 500;
-                    }
-                    else if (s[i] == 'C'&& i < s.Length - 1 && s[i + 1] == 'M')
-                    {
-                        returnNumber = returnNumber + 900;
-                        i++;
-                    }
-                    else if (s[i] == 'C' && i < s.Length - 1 && s[i + 1] == 'D')
-                    {
-                        returnNumber = returnNumber + 400;
-                        i++;
-                    }
-                    else if (s[i] == 'C')
-                    {
-                        returnNumber = returnNumber + 100;
-                    }
-                    else if (s[i] == 'L')
-                    {
-                        returnNumber = returnNumber + 50;
-                    }
-                    else if (s[i] == 'X' && i < s.Length - 1 && s[i + 1] == 'C')
-                    {
-                        returnNumber = returnNumber + 90;
-                        i++;
-                    }
-                    else if (s[i] == 'X' && i < s.Length - 1 && s[i + 1] == 'L')
-                    {
-                        returnNumber = returnNumber + 40;
-                        i++;
-                    }
-                    else if (s[i] == 'X')
-                    {
-                        returnNumber = returnNumber + 10;
-                    }
-                    else if (s[i] == 'V')
-                    {
-                        returnNumber = returnNumber + 5;
-                    }
-                    else if (s[i] == 'I' && i < s.Length - 1 && s[i + 1] == 'X')
-                    {
-                        returnNumber = returnNumber + 9;
-                        i++;
-                    }
-                    else if (s[i] == 'I' && i < s.Length - 1 && s[i + 1] == 'V')
-                    {
-                        returnNumber = returnNumber + 4;
-                        i++;
-                    }
-                    else if (s[i] == 'I')
-                    {
-                        returnNumber = returnNumber + 1;
-                    }
-                    if (s[i] == 'I' && i == s.Length)
-                    {
-                        returnNumber = returnNumber + 1;
-                    }
+
+                if (s[i] == 'M')
+                {
+                    returnNumber = returnNumber + 1000;
+                }
+                else if (s[i] == 'D')
+                {
+                    returnNumber = returnNumber + 500;
+                }
+                else if (s[i] == 'C' && i < s.Length - 1 && s[i + 1] == 'M')
+                {
+                    returnNumber = returnNumber + 900;
+                    i++;
+                }
+                else if (s[i] == 'C' && i < s.Length - 1 && s[i + 1] == 'D')
+                {
+                    returnNumber = returnNumber + 400;
+                    i++;
+                }
+                else if (s[i] == 'C')
+                {
+                    returnNumber = returnNumber + 100;
+                }
+                else if (s[i] == 'L')
+                {
+                    returnNumber = returnNumber + 50;
+                }
+                else if (s[i] == 'X' && i < s.Length - 1 && s[i + 1] == 'C')
+                {
+                    returnNumber = returnNumber + 90;
+                    i++;
+                }
+                else if (s[i] == 'X' && i < s.Length - 1 && s[i + 1] == 'L')
+                {
+                    returnNumber = returnNumber + 40;
+                    i++;
+                }
+                else if (s[i] == 'X')
+                {
+                    returnNumber = returnNumber + 10;
+                }
+                else if (s[i] == 'V')
+                {
+                    returnNumber = returnNumber + 5;
+                }
+                else if (s[i] == 'I' && i < s.Length - 1 && s[i + 1] == 'X')
+                {
+                    returnNumber = returnNumber + 9;
+                    i++;
+                }
+                else if (s[i] == 'I' && i < s.Length - 1 && s[i + 1] == 'V')
+                {
+                    returnNumber = returnNumber + 4;
+                    i++;
+                }
+                else if (s[i] == 'I')
+                {
+                    returnNumber = returnNumber + 1;
+                }
+                if (s[i] == 'I' && i == s.Length)
+                {
+                    returnNumber = returnNumber + 1;
+                }
                 Console.WriteLine(returnNumber);
-                
+
             }
             return returnNumber;
         }
@@ -127,21 +129,21 @@ namespace MorePractice
         public static int RomanToInt2(string s)
         {
             int finalNumber = 0;
-            for(int i = 0; i < s.Length; i++)
+            for (int i = 0; i < s.Length; i++)
             {
                 switch (s[i])
                 {
                     case 'M':
                         finalNumber = finalNumber + 1000;
                         break;
-                    //case ''
+                        //case ''
                 }
             }
 
             return finalNumber;
         }
-    
-    public static string reverseAStringInAnArray(string[] strs)
+
+        public static string reverseAStringInAnArray(string[] strs)
         {
             string prefix = "";
             string character = "a";
@@ -167,7 +169,7 @@ namespace MorePractice
         public static string LongestCommonPrefix(string[] strs)
         {
             string prefix = "";
-           //string character = "a";
+            //string character = "a";
             //bool flag = true;
             int shortestStringLength = shortestString(strs);
             //int shortStringLen = 0;
@@ -196,13 +198,13 @@ namespace MorePractice
             //}
 
 
-            
-            for (int i = 0; i < strs.Length -1; i++)
+
+            for (int i = 0; i < strs.Length - 1; i++)
             {
                 prefix = "";
                 for (int j = 0; j < shortestStringLength; j++)
                 {
-                    if (strs[i][j] == strs[i+1][j])
+                    if (strs[i][j] == strs[i + 1][j])
                     {
                         prefix = prefix + strs[i][j];
                     }
@@ -212,16 +214,16 @@ namespace MorePractice
                     }
                 }
             }
-                
-                
-            
+
+
+
             return prefix;
         }
 
         public static int shortestString(string[] stir)
         {
             int shStr = 0;
-            for(int i = 0; i < stir.Length - 1; i++)
+            for (int i = 0; i < stir.Length - 1; i++)
             {
                 if (stir[i].Length <= stir[i + 1].Length)
                 {
@@ -234,6 +236,89 @@ namespace MorePractice
             }
 
             return shStr;
+        }
+
+        public static bool IsValid(string s)
+        {
+            bool isClosed = false;
+            bool contCheck = true;
+            int paren = 0;
+            int parenO = 0;
+            int bloc = 0;
+            int blocO = 0;
+            int curl = 0;
+            int curlO = 0;
+            List<char> openOrClose = new List<char>();
+            foreach (char c in s)
+            {
+                if (c == '(' && parenO <= paren)
+                {
+                    openOrClose.Add('(');
+                    paren++;
+                }
+                else if (c == '[' && blocO <= bloc)
+                {
+                    openOrClose.Add('[');
+                    bloc++;
+                }
+                else if (c == '{' && curlO <= curl)
+                {
+                    openOrClose.Add('{');
+                    curl++;
+                }
+                else if (c == ')')
+                {
+                    parenO++;
+                }
+                else if (c == ']')
+                {
+                    blocO++;
+                }
+                else if (c == '}')
+                {
+                    curlO++;
+                }
+                if (openOrClose.Count > 0)
+                {
+                    if (c == ')' && openOrClose[openOrClose.Count - 1] == '(')
+                    {
+                        openOrClose.RemoveAt(openOrClose.Count - 1);
+                    }
+                    else if (c == ']' && openOrClose[openOrClose.Count - 1] == '[')
+                    {
+                        openOrClose.RemoveAt(openOrClose.Count - 1);
+                    }
+                    else if (c == '}' && openOrClose[openOrClose.Count - 1] == '{')
+                    {
+                        openOrClose.RemoveAt(openOrClose.Count - 1);
+                    }
+                    else if (c == ')' && openOrClose[openOrClose.Count - 1] != '(')
+                    {
+                        contCheck = false;
+                    }
+                    else if (c == ']' && openOrClose[openOrClose.Count - 1] != '[')
+                    {
+                        contCheck = false;
+                    }
+                    else if (c == '}' && openOrClose[openOrClose.Count - 1] != '{')
+                    {
+                        contCheck = false;
+                    }
+                }
+
+            }
+
+
+            if (paren - parenO == 0 && bloc - blocO == 0 && curl - curlO == 0 && contCheck == true)
+            {
+                isClosed = true;
+            }
+            if (s.Length == 1)
+            {
+                isClosed = false;
+            }
+
+            return isClosed;
         }
     }
 }
